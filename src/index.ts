@@ -3,7 +3,7 @@ import cors from "cors";
 import { prisma } from "./GlobalPrismaClient";
 import { ensureErrorObject, ensureNumberOrThrow } from "./utils";
 const app = express();
-
+const PORT = process.env.PORT ? Number(process.env.POR) : 3001;
 app.use(cors());
 app.use(express.json());
 app.use(require("body-parser").urlencoded({ extended: false }));
@@ -51,5 +51,5 @@ app.post("/score", async function (req, res) {
   }
 });
 
-app.listen(3001);
-console.log("listening on port 3001...");
+app.listen(PORT);
+console.log(`listening on port ${PORT}...`);
