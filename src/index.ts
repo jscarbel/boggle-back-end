@@ -3,7 +3,7 @@ import cors from "cors";
 import { prisma } from "./GlobalPrismaClient";
 import { ensureErrorObject, ensureNumberOrThrow } from "./utils";
 const app = express();
-const PORT = process.env.PORT !== undefined ? Number(process.env.POR) : 10000;
+const PORT = process.env.PORT || 10000;
 app.use(cors());
 app.use(express.json());
 app.use(require("body-parser").urlencoded({ extended: false }));
