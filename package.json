@@ -1,11 +1,12 @@
 {
   "name": "boggle-back-end",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "dev": "node-dev src/index.ts",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev src/index.ts",
+    "build": "tsc",
     "clean": "rm -rf dist"
   },
   "author": "",
@@ -17,5 +18,12 @@
     "express": "^4.19.2",
     "pg": "^8.12.0",
     "prisma": "^5.16.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3"
   }
 }
