@@ -1,4 +1,4 @@
-export const ensureNumberOrThrow = (value: unknown): number => {
+const ensureNumberOrThrow = (value) => {
   if (typeof value === "number") {
     return value;
   } else if (typeof value === "string") {
@@ -10,10 +10,12 @@ export const ensureNumberOrThrow = (value: unknown): number => {
   throw new Error(`Could not parse ${value} into a number`);
 };
 
-export const ensureErrorObject = (e: unknown): Error => {
+const ensureErrorObject = (e) => {
   if (e instanceof Error) {
     return e;
   }
 
   return new Error(JSON.stringify(e));
 };
+
+module.exports = { ensureNumberOrThrow, ensureErrorObject };

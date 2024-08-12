@@ -1,7 +1,7 @@
-import express from "express";
-import cors from "cors";
-import { prisma } from "./GlobalPrismaClient";
-import { ensureErrorObject, ensureNumberOrThrow } from "./utils";
+const express = require("express");
+const cors = require("cors");
+const { prisma } = require("./GlobalPrismaClient");
+const { ensureErrorObject, ensureNumberOrThrow } = require("./utils");
 const app = express();
 
 app.use(cors());
@@ -20,9 +20,9 @@ app.get("/scores", async function (req, res) {
 
 app.post("/score", async function (req, res) {
   try {
-    const userName: string = req.body?.userName;
-    const score: number = ensureNumberOrThrow(req.body?.score);
-    const wordCount: number = ensureNumberOrThrow(req.body?.wordCount);
+    const userName = req.body?.userName;
+    const score = ensureNumberOrThrow(req.body?.score);
+    const wordCount = ensureNumberOrThrow(req.body?.wordCount);
 
     if (
       userName === undefined ||
@@ -45,8 +45,8 @@ app.post("/score", async function (req, res) {
     });
 
     return res.send(newScore);
-  } catch (e: unknown) {
-    const error: Error = ensureErrorObject(e);
+  } catch (e) {
+    const error = ensureErrorObject(e);
     return res.send(`there was an error: ${error.message}`);
   }
 });
