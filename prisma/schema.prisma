@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://jaimie:h0bUrmOKLrFOxipYZ3scJucrPdyXFT6j@dpg-cqt6pfaj1k6c73burof0-a/boggle_back_end"
 }
 
 model Score {
