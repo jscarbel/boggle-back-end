@@ -9,7 +9,8 @@
     "dev": "ts-node-dev src/index.ts",
     "build": "tsc",
     "clean": "rm -rf dist",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "deploy": "DATABASE_URL=postgresql://jaimie:h0bUrmOKLrFOxipYZ3scJucrPdyXFT6j@dpg-cqt6pfaj1k6c73burof0-a/boggle_back_end && npm install && npm install -g prisma && npm prisma generate && npm prisma migrate deploy && npm run build"
   },
   "author": "",
   "license": "ISC",
