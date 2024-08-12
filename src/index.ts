@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import { prisma } from "./GlobalPrismaClient";
-import { inspect } from "util";
 import { ensureErrorObject, ensureNumberOrThrow } from "./utils";
 const app = express();
 
@@ -53,3 +52,4 @@ app.post("/score", async function (req, res) {
 });
 
 app.listen(3001);
+console.log("listening on port 3001...");
